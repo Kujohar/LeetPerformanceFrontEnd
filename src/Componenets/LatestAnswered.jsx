@@ -2,22 +2,23 @@ import data from '../assets/LeetCodeData-2023-03-06.json';
 
 function LatestAnswered() {
     let LatestTen = []
-    data.forEach(item => {
-        if (item.status_display == "Accepted") {
-            LatestTen.push(item)
+    let i = 0
+    while (LatestTen.length <= 10) {
+        if (data[i].status_display == "Accepted") {
+            LatestTen.push(data[i])
         }
-    })
-    // console.log(LatestTen)
+        i += 1
+    }
+    console.log(LatestTen)
 
     const dataOrganizer = (submissionItem) => {
         return (
             <tr key={submissionItem.id}>
-                <th>{submissionItem.title}</th>
-                <th>{submissionItem.runtime}</th>
-                <th>{submissionItem.memory}</th>
-                <th>{submissionItem.status_display}</th>
-                <th>{submissionItem.title}</th>
-                <th>{submissionItem.url}</th>
+                <td className='border border-slate-700'>{submissionItem.title}</td>
+                <td className='border border-slate-700'>{submissionItem.runtime}</td>
+                <td className='border border-slate-700'>{submissionItem.memory}</td>
+                <td className='border border-slate-700'>{submissionItem.status_display}</td>
+                <td className='border border-slate-700'>{submissionItem.url}</td>
             </tr>
         )
     }
@@ -34,15 +35,18 @@ function LatestAnswered() {
     }
 
     return (
-        <div className="">
-            <table>
+        <div >
+            <div className='p-4 text-2xl font-bold'>
+                Last Ten Submissions
+            </div>
+            <table className="table-fixed border-separate border-spacing-2 border border-slate-300">
                 <thead>
                     <tr>
-                        <th>title</th>
-                        <th>runtime</th>
-                        <th>memory</th>
-                        <th>Status</th>
-                        <th>Link</th>
+                        <th className='border border-slate-300'>Title</th>
+                        <th className='border border-slate-300'>Runtime</th>
+                        <th className='border border-slate-300'>Memory</th>
+                        <th className='border border-slate-300'>Status</th>
+                        <th className='border border-slate-300'>Link</th>
                     </tr>
                 </thead>
                 <tbody>
