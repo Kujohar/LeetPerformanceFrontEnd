@@ -18,7 +18,7 @@ function LatestAnswered() {
                 <td className='border border-slate-700'>{submissionItem.runtime}</td>
                 <td className='border border-slate-700'>{submissionItem.memory}</td>
                 <td className='border border-slate-700'>{submissionItem.status_display}</td>
-                <td className='border border-slate-700'>{submissionItem.url}</td>
+                <td className='border border-slate-700'><a href={"https://leetcode.com" + submissionItem.url} target="_blank" rel='noreferrer noopener'>Link</a></td>
             </tr>
         )
     }
