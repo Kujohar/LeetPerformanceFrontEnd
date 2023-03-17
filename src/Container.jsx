@@ -5,7 +5,7 @@ import RevisitList from "./Componenets/RevisitList"
 function Container() {
 
     return (
-        <div className="flex flex-wrap grid grid-cols-2">
+        <div className="flex flex-wrap grid grid-cols-4">
             <LatestAnswered />
             <RevisitList />
             <PerformanceTrend />

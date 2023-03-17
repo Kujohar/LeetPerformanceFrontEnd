@@ -39,11 +39,11 @@ function LatestAnswered() {
     }
 
     return (
-        <div >
+        <div className='flex-col'>
             <div className='p-4 text-2xl font-bold'>
                 Last Ten Submissions
             </div>
-            <table className="flex table-fixed border-separate border-spacing-2 border border-slate-300 ">
+            <table className="table-auto border-separate border-spacing-2 border border-slate-300 w-max">
                 <thead>
                     <tr>
                         <th className='border border-slate-300'>Title</th>
