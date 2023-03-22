@@ -3,8 +3,8 @@ import data from '../assets/LeetCodeData-2023-03-06.json';
 function RevisitList() {
     let LatestTen = []
     let i = 0
-    while (LatestTen.length < 10) {
-        if (data[i].status_display != "Accepted") {
+    while (LatestTen.length <= 10) {
+        if (data[i].status_display == "Accepted") {
             LatestTen.push(data[i])
         }
         i += 1
@@ -15,14 +15,10 @@ function RevisitList() {
         return (
             <tr key={submissionItem.id}>
                 <td className='border border-slate-700'>{submissionItem.title}</td>
-                <td className='border border-slate-700'>{submissionItem.status_display}</td>
                 <td className='border border-slate-700'>{submissionItem.runtime}</td>
                 <td className='border border-slate-700'>{submissionItem.memory}</td>
-                <td className='border border-slate-700'>
-                    <a href={"https://leetcode.com" + submissionItem.url} target="_blank" rel='noreferrer noopener'>
-                        Link
-                    </a>
-                </td>
+                <td className='border border-slate-700'>{submissionItem.status_display}</td>
+                <td className='border border-slate-700'>{submissionItem.url}</td>
             </tr>
         )
     }
@@ -39,17 +35,17 @@ function RevisitList() {
     }
 
     return (
-        <div className='p-4'>
+        <div >
             <div className='p-4 text-2xl font-bold'>
                 Incomplete solutions
             </div>
-            <table className="table-auto border-separate border-spacing-2 border border-slate-300 w-full">
+            <table className="table-fixed border-separate border-spacing-2 border border-slate-300">
                 <thead>
                     <tr>
                         <th className='border border-slate-300'>Title</th>
-                        <th className='border border-slate-300'>Status</th>
                         <th className='border border-slate-300'>Runtime</th>
                         <th className='border border-slate-300'>Memory</th>
+                        <th className='border border-slate-300'>Status</th>
                         <th className='border border-slate-300'>Link</th>
                     </tr>
                 </thead>
